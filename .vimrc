@@ -1,0 +1,11 @@
+:set tabstop=4
+:set shiftwidth=4 
+:set expandtab 
+:set ruler 
+:set nu 
+:set textwidth=80 
+:set backspace=2 
+:set colorcolumn=+1 
+:set wrap 
+:set noswapfile 
+colorscheme desert
