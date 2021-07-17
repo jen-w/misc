@@ -6,8 +6,9 @@ greset() {
   git reset HEAD~$1
 }
 
+# jsonderulo test.json [--sort-keys]
 jsonderulo() {
-  python -m json.tool $1 > jsonderulo.json
+  python3 -m json.tool $1 $2 > jsonderulo.json
   rm $1
   mv jsonderulo.json $1
 }
