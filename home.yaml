@@ -1,0 +1,31 @@
+metadata:
+  name: Arrive home at night
+  description: Light turns on for 10 min upon arrival at night.
+automations:
+  starters:
+    - type: home.state.HomePresence
+      state: homePresenceMode
+      is: HOME
+
+  condition:
+    type: not
+    condition:
+      type: time.between
+      after: sunrise
+      before: sunset
+
+  actions:
+    - type: device.command.OnOff
+      devices:
+        - Backyard Light - Backyard
+      on: true
+    - type: device.command.BrightnessAbsolute
+      devices:
+        - Backyard Light - Backyard
+      brightness: 100.0
+    - type: time.delay
+      for: 10min
+    - type: device.command.OnOff
+      devices:
+        - Backyard Light - Backyard
+      on: false
